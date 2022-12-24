@@ -2,9 +2,9 @@ import os
 from setuptools import find_packages, setup, Extension
 import subprocess
 
-this_dir = os.path.dirname(os.path.realpath(__file__))
+this_dir  = os.path.dirname(os.path.realpath(__file__))
 swig_file = os.path.join(this_dir, 'argus_camera/cpp.i')
-argus_include_dir = os.path.join(os.environ['HOME'], 'tegra_multimedia_api/include')
+argus_include_dir = '/usr/src/jetson_multimedia_api'
 
 subprocess.call(['swig', '-DSWIGWORDSIZE64', '-c++', '-python', '-interface', '_argus_camera_cpp', swig_file])
 
